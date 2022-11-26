@@ -18,9 +18,3 @@ if __name__ == "__main__":
             if s.startswith("к"):
                 k = s.find(" ")
                 print(s[:k])
-
-
-
-
-
-
