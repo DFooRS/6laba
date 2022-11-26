@@ -7,14 +7,14 @@ import sys
 if __name__ == "__main__":
     word = input("Введите слово: ")
     s = int(input("Введите номер буквы, которую желаете переставить: "))
-    k = int(input("Введите номер буквы, на место которой желаете поставить введённую букву: "))
+    k = int(input("Введите номер буквы, "
+                  "на место которой желаете поставить введённую букву: "))
+
+    if s >= k:
+        print("Недопустимое значение", file=sys.stderr)
+        exit(1)
 
     s -= 1
     k -= 1
 
-    st = word[s]
-    temp = word[0:s]
-    temp2 = word[k + 1]
-    word = word[s+1:k + 1]
-
-    print(temp + word + st + temp2)
+    print(word[:s] + word[s + 1:k + 1] + word[s] + word[k + 1:])
